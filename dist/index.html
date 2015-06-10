@@ -3,13 +3,27 @@
 <head>
 	<title></title>
 <link rel="stylesheet" type="text/css" href="styles/styles.css">
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+	<form id="imageForm">
+		<input type="text" id="imageURL">	
+			<button id="addImage">add image</button>
+		<input type="text" id="imageCaption">
+			<button id="addCaption">add caption</button>
+
+	</form>
 
 
 
 
-
+<script type="text/template" id="image-template">
+	<div>
+		<input type="checkbox">
+		// <!-- this gets replaced with property from object we pass into our template -->
+		<span> <%= image %> </span> 
+	</div>
+</script>
 
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	
