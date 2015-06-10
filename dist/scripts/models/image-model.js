@@ -1,15 +1,26 @@
 var image = Backbone.Model.extend ({
 	defaults: {
-		item: null,
+		imageUrl: null,
+		caption: null
 	
 	},
-	// validate: function(attrs, options) {
-	// 	//attr is the object that contains all attributes of this model
-	// 	if(attr.item.length === 0) {
-	// 		return "you must enter to do item";
-	// 	} else {
-	// 	return false; 
-	// },
-	urlRoot: "http://tiy-fee-rest.herokuapp.com/collections/here-you-go-aaron"
 
+	validate: function(attr, options) {
+		if(attr.imageUrl.length === 0)  {
+			$('#url-alert').show();
+			return 'You must enter a valid URL'; 
+		}
+		if(attr.imageUrl.indexOf('http://') < 0) {
+			$('#url-alert').show();
+			return 'You must enter a valid URL'; 
+		}
+		if(attr.caption.length === 0) {
+			$('#caption-alert').show();
+			return 'You must enter a caption';
+		}
+		
+		$('#url-alert').hide();
+		$('#caption-alert').hide();
+		return false;
+	},
 });

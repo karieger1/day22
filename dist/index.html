@@ -18,11 +18,13 @@
 
 
 <script type="text/template" id="image-template">
-	<div>
-		<input type="checkbox">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
 		// <!-- this gets replaced with property from object we pass into our template -->
-		<span> <%= image %> </span> 
-	</div>
+			<img src="<%= imageUrl %>" class="img-responsive">
+			<p><%= caption %></p>
+		</div>
+	</div
 </script>
 
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
