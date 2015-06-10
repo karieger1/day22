@@ -2,22 +2,35 @@
 <html>
 <head>
 	<title></title>
-<link rel="stylesheet" type="text/css" href="styles/styles.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
 <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-	<form id="imageForm">
-		<input type="text" id="imageURL">	
+
+	<section>
+		<!-- INPUT BUTTON -->
+		<div id="buttonWrapper">
+			<input type="image" src="http://www.oxatis.com/Files/13825/plus16.png" name="plusButton" id="plusButton">
+		</div>
+			
+		<form id="imageForm">
+			<div id="addURL">
+				Image URL:<input type="text" id="imageURL">	
+			</div>
+
+			<div id="addCaption">
+				Caption:<input type="text" id="imageCaption">
+			</div>
+
+			<button id="cancel">cancel</button>
 			<button id="addImage">add image</button>
-		<input type="text" id="imageCaption">
-			<button id="addCaption">add caption</button>
-
-	</form>
-
-	<section id="image-album">
-	<!-- images go here -->
+		</form>
+				
 	</section>
 
+	<section id="imageAlbum">
+		<!-- images go here -->
+	</section>
 
 
 <script type="text/template" id="image-template">
@@ -25,7 +38,7 @@
 			<img src="<%= imageUrl %>" class="img-responsive">
 			<p><%= caption %></p>
 		</div>
-	</div
+	</div>
 </script>
 
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>

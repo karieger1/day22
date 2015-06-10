@@ -1,0 +1,38 @@
+#plusButton {
+	height: 3em;
+	width: 3em;
+}
+/*
+#top {
+	
+}
+#imageCaption {
+	display: block;
+}
+
+#addCaption {
+	display:inline;
+}*/
+
+#imageForm {
+	/*visibility: hidden;
+	/*background-color: purple;*/
+	width:200px;
+	height:100px;
+
+	
+}
+
+#buttonWrapper {
+height:50;
+width:100%;
+background-color: purple;
+}
+
+#addURL {
+
+}
+
+#addCaption {
+float: clear;
+}
