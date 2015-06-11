@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
-</head>
-<body>
-
-	<section>
-		<!-- INPUT BUTTON -->
-		<div id="buttonWrapper">
-			<input type="image" src="http://www.oxatis.com/Files/13825/plus16.png" name="plusButton" id="plusButton">
-		</div>
-			
-		<form id="imageForm">
-			<div id="addURL">
-				Image URL:<input type="text" id="imageURL">	
+	<head>
+		<title>Probably cats.</title>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<section>
+			<!-- INPUT BUTTON -->
+			<div id="buttonWrapper">
+				<input type="image" src="http://www.oxatis.com/Files/13825/plus16.png" name="plusButton" id="plusButton">
 			</div>
-
-			<div id="addCaption">
+			<form id="addImage">
+				Image URL:<input type="text" id="imageURL">
 				Caption:<input type="text" id="imageCaption">
-			</div>
-
-			<button id="cancel">cancel</button>
-			<button id="addImage">add image</button>
-		</form>
-				
-	</section>
-
-	<section id="imageAlbum">
+				<button id="cancel">cancel</button>
+				<button id="addImage">add image</button>
+			</form>
+			
+		</section>
+		<div id="imageAlbum">
+		<form id="comment"></form>
 		<!-- images go here -->
-	</section>
-
-
-<script type="text/template" id="image-template">
-		// <!-- this gets replaced with property from object we pass into our template -->
-			<img src="<%= imageUrl %>" class="img-responsive">
-			<p><%= caption %></p>
-		</div>
 	</div>
-</script>
+<script type="text/template" id="image-template">
+	// <!-- this gets replaced with property from object we pass into our template -->
+	<div class="image"><img class="img-responsive" src="<%= image %>" >
+	<p><%= caption %></p>
+	</div>
 
+</script>
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-	
+
 <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
 <script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
 <script type="text/javascript" src="scripts/models/image-model.js"></script>
-	
+
 <script type="text/javascript" src="scripts/collections/image-collection.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
 </body>

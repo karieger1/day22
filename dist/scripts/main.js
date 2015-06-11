@@ -2,8 +2,11 @@ $(document).ready(function(){
 
 
 
-	$("#plusButton").click(function(){
-		$("#imageForm").toggle();
+	$("#plusButton").on("click", function(){
+		$("#addImage").toggle();
+	});
+	$("#cancel").on("click", function() {
+		$("#addImage").toggle();
 	});
 
 
@@ -13,41 +16,41 @@ $(document).ready(function(){
 
 	var imageBuilder = _.template($("#image-template").html());
 
-	$("#imageForm").on("submit", function(e) {
+	$("#addImage").on("submit", function(e) {
 		e.preventDefault();
-		console.log("submitted");
-	});
+		console.log("image submitted");
+	
 
 
 	var newImage = new image({
-			pic: $('#imageURL').val(),
-            caption: $('#imageCaption').val()
-        });
+		image: $('#imageURL').val(),
+        caption: $('#imageCaption').val()
+    });
 
 
 	if(newImage.isValid()) {
+		console.log("this is a valid image");
 			imageList.add(newImage);
 			newImage.save();
-			$("#imageURL").val("");
-			$("#imageCaption").val("");
-		
-		} else {
+	}
+	else {
 
-			console.log(newImage.validationError);
+		console.log('error');
+		console.log("newImage.validationError");
 		}
+
 			console.log(newImage);
+	});
+		
+	
 	
 
 	imageList.on("add", function(model) {
-		var imageHTML = image(model.attributes);
+		var imageHTML = imageBuilder(model.attributes);
+		console.log(imageHTML);
 
-		$("image-template").append(imageHTML);
+		$("#imageAlbum").append(imageHTML);
 	});
 
+
 });
-
-		
-	
-
-	
-
