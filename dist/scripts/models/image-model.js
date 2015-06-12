@@ -1,4 +1,4 @@
-var image = Backbone.Model.extend ({
+var ImageModel = Backbone.Model.extend ({
 	defaults: {
 		imageUrl: null,
 		caption: null
