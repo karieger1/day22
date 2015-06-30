@@ -22,34 +22,38 @@ $(document).ready(function(){
 	
 
 
-	var newImage = new image({
-		image: $('#imageURL').val(),
-        caption: $('#imageCaption').val()
-    });
+		var newImage = new ImageModel({
+			image: $('#imageURL').val(),
+	        caption: $('#imageCaption').val()
+	    });
 
 
-	if(newImage.isValid()) {
-		console.log("this is a valid image");
-			imageList.add(newImage);
-			newImage.save();
-	}
-	else {
-
-		console.log('error');
-		console.log("newImage.validationError");
+		if(newImage.isValid()) {
+			console.log("this is a valid image");
+				imageList.add(newImage);
+				newImage.save();
 		}
+		else {
 
-			console.log(newImage);
+			console.log('error');
+			console.log("newImage.validationError");
+			}
+
+				console.log(newImage);
 	});
 		
 	
 	
 
 	imageList.on("add", function(model) {
-		var imageHTML = imageBuilder(model.attributes);
-		// console.log(imageHTML);
-
-		$("#imageAlbum").append(imageHTML);
+		model.get("image");
+		// console.log(model.get("image"));
+		if(model.get("image")) {
+			var imageHTML = imageBuilder(model.attributes);
+			// console.log(imageHTML);
+			$("#imageAlbum").append(imageHTML);
+		}
+		
 	});
 
 

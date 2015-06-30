@@ -26,3 +26,7 @@ background-color: purple;
 #addCaption {
 float: clear;
 }
+
+#top {
+	display: hidden;
+}

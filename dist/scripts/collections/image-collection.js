@@ -1,8 +1,8 @@
+
 var ImageCollection = Backbone.Collection.extend ({
-	model: image,
+	model: ImageModel,
 	
-	url: "http://tiny-pizza-server.herokuapp.com/collections/TacoTown",
+	url: "http://tiny-pizza-server.herokuapp.com/collections/TacoTown2",
 	idAtrribute: "_id"
 });
 
-//at top, add var Image = require("../models/imagemodel.js")
